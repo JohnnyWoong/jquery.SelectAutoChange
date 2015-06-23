@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="jquery-1.11.1.js"></script>
+  <script src="jquery.SelectAutoChange.js"></script>
+</head>
+<body>
+  <select id="selCountry"></select>
+  <select id="selState"></select>
+  <select id="selCity"></select>
+  
+  <script type="text/javascript">
+    SelectList.mf_init({
+      country: 'selCountry',
+      state: 'selState',
+      city: 'selCity',
+      hideState: 'true',
+      defaultValue: '---请选择---',
+      current: '31|01|07',
+      language: 'zh_cn',
+      path_to_xml: 'data/china/',
+      read_only: false  
+    });
+  </script>
+</body>
+</html>
