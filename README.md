@@ -32,8 +32,9 @@ LocalList.mf_init(options);
 
 可以选择为二级联动或三级联动,可以选择是否隐藏没有多余数据的联动,修正部分脚本错误
 
+```javascript
 LocalList.mf_init({
-	country: 'selCountry',
+    country: 'selCountry',
     state: 'selState',
     city: 'selCity',
     hideState: 'true',
@@ -43,4 +44,4 @@ LocalList.mf_init({
     path_to_xml: 'data/china/',
     read_only: false  
 });
-
+```
