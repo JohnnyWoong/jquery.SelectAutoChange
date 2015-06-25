@@ -1,8 +1,9 @@
 /**
- * jquery.SelectAutoChange v1.56
- * 05 Jun 2015
+ * jquery.SelectAutoChange v1.57
+ * 25 Jun 2015
  *
- * 更新使用方法
+ * 使之支持对三个下拉框赋不同的初始值
+ * 更新使用方法(05 Jun 2015 v1.56)
  * 下拉框三级联动(15 Mar 2015 v1.55)
  * 基于https://github.com/jasonslyvia/china-city-select
  * 增加 select>option 的默认值( value 为 -1 ) 
@@ -18,14 +19,14 @@
 
 /*使用方法
     SelectList.mf_init({
-      country: 'selCountry',          //一级 select 的 ID
-      state: 'selState',              //二级 select 的 ID
-      city: 'selCity',                //三级 select 的 ID (可选,如为两级联动,则不需要该属性)
-      hideState: 'true',              //是否隐藏只有一个子分类的二级分类(可选,默认为隐藏)
-      defaultValue: '---请选择---',   //每个select的第一个option的值
-      current: '31|01|07',            //初始化时3个select的默认值，使用region code及 | 区分，如 '31|01|07' ，具体请查阅相对应的 xml 数据文件
-      language: 'zh_cn',              //语言版本
-      path_to_xml: 'data/china/',     //xml文件所在的文件夹
+      country: 'selCountry',                                           //一级 select 的 ID
+      state: 'selState',                                               //二级 select 的 ID
+      city: 'selCity',                                                 //三级 select 的 ID (可选,如为两级联动,则不需要该属性)
+      hideState: 'true',                                               //是否隐藏只有一个子分类的二级分类(可选,默认为隐藏)
+      defaultValue: ['---请选择---', '---请选择---', '---请选择---'],        //每个select的第一个option的值(可选,如为二级联动,则可以只写两个)
+      current: '31|01|07',                                             //初始化时3个select的默认值，使用region code及 | 区分，如 '31|01|07' ，具体请查阅相对应的 xml 数据文件
+      language: 'zh_cn',                                               //语言版本
+      path_to_xml: 'data/china/',                                      //xml文件所在的文件夹
       read_only: false  
     });
 */
@@ -136,7 +137,7 @@ var SelectList = {
 	md_defaultCountry : "",
 	md_defaultState : "",
 	md_defaultCity : "",
-	md_defaultValue: "---",
+	md_defaultValue: ['---', '---', '---'],
 	md_loadingId : "loading",
 	md_load_completeId : "load_complete",
 	md_http_request : false,
@@ -153,7 +154,7 @@ var SelectList = {
 			state: 'state',
 			city: 'city',
 			hideState: 'true',
-			defaultValue: '---',
+			defaultValue: ['---', '---', '---'],
 			current: '',
 			language: 'zh_cn',
 			path_to_xml: '',
@@ -296,7 +297,7 @@ var SelectList = {
 			return;
 		}
 		var lo_CountryDivObj = self.mo_countryObj;
-		Util_List.mf_clear(self.mo_countryObj, self.md_defaultValue);
+		Util_List.mf_clear(self.mo_countryObj, self.md_defaultValue[0]);
 		var lo_Countrys = self.md_loc_xml.getElementsByTagName("CountryRegion");
 		var ld_text = "", ld_value = "";
 		for (var l_i = 0; l_i < lo_Countrys.length; l_i++) {
@@ -322,7 +323,7 @@ var SelectList = {
 		}
         
 		var lo_StateDivObj = self.mo_stateObj;
-		Util_List.mf_clear(self.mo_stateObj, self.md_defaultValue);
+		Util_List.mf_clear(self.mo_stateObj, self.md_defaultValue[1]);
 		do {
 			var lo_Countrys = self.md_loc_xml
 					.getElementsByTagName("CountryRegion");
@@ -372,7 +373,7 @@ var SelectList = {
 			return;
 		}
 		var lo_CityDivObj = self.mo_cityObj;
-		Util_List.mf_clear(self.mo_cityObj, self.md_defaultValue);
+		Util_List.mf_clear(self.mo_cityObj, self.md_defaultValue[2]);
 		do {
 			var lo_Countrys = self.md_loc_xml
 					.getElementsByTagName("CountryRegion");
