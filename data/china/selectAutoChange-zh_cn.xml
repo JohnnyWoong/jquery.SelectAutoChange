@@ -3610,33 +3610,39 @@
     <State Name="五家渠市" Code="94" />
   </CountryRegion>
   <CountryRegion Name="台湾" Code="71">
-    <State Name="台北" Code="01" />
-    <State Name="高雄" Code="02" />
-    <State Name="基隆" Code="03" />
-    <State Name="台中" Code="04" />
-    <State Name="台南" Code="05" />
-    <State Name="新竹" Code="06" />
-    <State Name="嘉义" Code="07" />
-    <State Name="宜兰" Code="08" />
-    <State Name="桃园" Code="09" />
-    <State Name="苗栗" Code="10" />
-    <State Name="彰化" Code="11" />
-    <State Name="南投" Code="12" />
-    <State Name="云林" Code="13" />
-    <State Name="屏东" Code="14" />
-    <State Name="台东" Code="15" />
-    <State Name="花莲" Code="16" />
-    <State Name="澎湖" Code="17" />
+  	<State Name="台湾" Code="01">
+	    <City Name="台北" Code="01" />
+	    <City Name="高雄" Code="02" />
+	    <City Name="基隆" Code="03" />
+	    <City Name="台中" Code="04" />
+	    <City Name="台南" Code="05" />
+	    <City Name="新竹" Code="06" />
+	    <City Name="嘉义" Code="07" />
+	    <City Name="宜兰" Code="08" />
+	    <City Name="桃园" Code="09" />
+	    <City Name="苗栗" Code="10" />
+	    <City Name="彰化" Code="11" />
+	    <City Name="南投" Code="12" />
+	    <City Name="云林" Code="13" />
+	    <City Name="屏东" Code="14" />
+	    <City Name="台东" Code="15" />
+	    <City Name="花莲" Code="16" />
+	    <City Name="澎湖" Code="17" />
+    </State>
   </CountryRegion>
   <CountryRegion Name="香港" Code="81">
-    <State Name="香港岛" Code="01" />
-    <State Name="九龙" Code="02" />
-    <State Name="新界" Code="03" />
+  	<State Name="香港" Code="01">
+	    <City Name="香港岛" Code="01" />
+	    <City Name="九龙" Code="02" />
+	    <City Name="新界" Code="03" />
+   </State>
   </CountryRegion>
   <CountryRegion Name="澳门" Code="82">
-    <State Name="澳门半岛" Code="01"/>
-    <State Name="氹仔岛" Code="02"/>
-    <State Name="路环岛" Code="03"/>
-    <State Name="路氹城" Code="04"/>
+  	<State Name="澳门" Code="01">
+	    <City Name="澳门半岛" Code="01"/>
+	    <City Name="氹仔岛" Code="02"/>
+	    <City Name="路环岛" Code="03"/>
+	    <City Name="路氹城" Code="04"/>
+	</State>
   </CountryRegion>
 </Location>
