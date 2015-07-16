@@ -32,7 +32,6 @@ LocalList.mf_init(options);
 
 可以选择为二级联动或三级联动,可以选择是否隐藏没有多余数据的联动,修正部分脚本错误
 
-<<<<<<< HEAD
 SelectList.mf_init({
   country: 'selCountry',                                           //一级 select 的 ID
   state: 'selState',                                               //二级 select 的 ID
@@ -58,4 +57,3 @@ LocalList.mf_init({
     read_only: false  
 });
 ```
->>>>>>> origin/master
